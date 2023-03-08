@@ -33,7 +33,7 @@ pipeline {
             steps{
                 script{
                     // if you want to use custom registry, use the first argument, which is blank in this case
-                    docker.withRegistry( dockerRepo, dockerCredentials){
+                    docker.withRegistry( 'http://211.43.14.57:40010', dockerCredentials){
                         dockerImageVersioned.push()
                         dockerImageLatest.push()
                     }
